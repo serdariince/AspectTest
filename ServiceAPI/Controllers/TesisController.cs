@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using Businnes.Abstract;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -18,6 +19,7 @@ namespace ServiceAPI.Controllers
             _tesisServices = tesisServices;
         }
 
+  
         [HttpGet]
         public IEnumerable Index()
         {
@@ -33,12 +35,21 @@ namespace ServiceAPI.Controllers
             return sonTesis;
         }
 
-        [Route("/tesis/{id}")]
-        public Tesis Index(int id)
+        [HttpGet("/tesis/{id}")]
+        public IEnumerable Index(int id)
         {
-            
             var sonuc = _tesisServices.Get(id);
             return  sonuc;
+        }
+        [HttpDelete]
+        public void Delete(Tesis tesis)
+        {
+             _tesisServices.Delete(tesis);
+        }
+        [HttpPut]
+        public void Update(Tesis tesis)
+        {
+            _tesisServices.Update(tesis);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Businnes.Abstract
     {
         List<Tesis> GetAllList();
 
-        Tesis Get(int id);
+        List<Tesis> Get(int id);
 
         /* Tesis GetKamera(int id);*/
         void Add(Tesis tesis);

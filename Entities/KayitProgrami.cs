@@ -1,4 +1,5 @@
-﻿using Core.Concrete;
+﻿using System.ComponentModel.DataAnnotations;
+using Core.Concrete;
 
 namespace Entities
 {
@@ -8,7 +9,7 @@ namespace Entities
         public string Ad { get; set; }
         public string Kanal { get; set; }
 
-        public int TesisId { get; set; }
+        public int? TesisId { get; set; }
         public Tesis Tesis { get; set; }
     }
 }

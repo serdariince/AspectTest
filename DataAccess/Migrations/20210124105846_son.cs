@@ -2,7 +2,7 @@
 
 namespace DataAccess.Migrations
 {
-    public partial class Yaplinadir : Migration
+    public partial class son : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -42,8 +42,8 @@ namespace DataAccess.Migrations
                     Marka = table.Column<string>(type: "TEXT", nullable: true),
                     Model = table.Column<string>(type: "TEXT", nullable: true),
                     SeriNo = table.Column<string>(type: "TEXT", nullable: true),
-                    IpId = table.Column<int>(type: "INTEGER", nullable: false),
-                    TesisId = table.Column<int>(type: "INTEGER", nullable: false)
+                    IpId = table.Column<int>(type: "INTEGER", nullable: true),
+                    TesisId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -53,13 +53,13 @@ namespace DataAccess.Migrations
                         column: x => x.IpId,
                         principalTable: "Ipler",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Kameralar_Tesisler_TesisId",
                         column: x => x.TesisId,
                         principalTable: "Tesisler",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -70,7 +70,7 @@ namespace DataAccess.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Ad = table.Column<string>(type: "TEXT", nullable: true),
                     Kanal = table.Column<string>(type: "TEXT", nullable: true),
-                    TesisId = table.Column<int>(type: "INTEGER", nullable: false)
+                    TesisId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -80,7 +80,7 @@ namespace DataAccess.Migrations
                         column: x => x.TesisId,
                         principalTable: "Tesisler",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

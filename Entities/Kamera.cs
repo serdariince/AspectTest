@@ -1,4 +1,5 @@
-﻿using Core.Concrete;
+﻿using System.ComponentModel.DataAnnotations;
+using Core.Concrete;
 
 namespace Entities
 {
@@ -11,9 +12,9 @@ namespace Entities
         public string SeriNo { get; set; }
 
 
-        public int IpId { get; set; }
+        public int? IpId { get; set; }
         public Ip Ip { get; set; }
-        public int TesisId { get; set; }
+        public int? TesisId { get; set; }
         public Tesis Tesis { get; set; }
     }
 }

@@ -1,40 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Businnes.Abstract;
+using DataAccess.Abstrast;
 using Entities;
 
 namespace Businnes.Contrete
 {
     public class KameraManager : IKameraServices
     {
-        public List<Kamera> GetAllList()
+        private IKameraDal _kameraDal;
+
+        public KameraManager(IKameraDal kameraDal)
         {
-            throw new NotImplementedException();
+            _kameraDal = kameraDal;
         }
 
-        public List<Kamera> GetByTesis(int id)
+        public List<Kamera> GetAllList()
         {
-            throw new NotImplementedException();
+          return  _kameraDal.KameralarList().ToList();
         }
+
+
 
         public Kamera Get(int id)
         {
-            throw new NotImplementedException();
+            return _kameraDal.Get(x=>x.Id==id);
         }
 
         public void Add(Kamera kamera)
         {
-            throw new NotImplementedException();
+            _kameraDal.Add(kamera);
         }
 
         public void Delete(Kamera kamera)
         {
-            throw new NotImplementedException();
+            _kameraDal.Delete(kamera);
         }
 
         public void Update(Kamera kamera)
         {
-            throw new NotImplementedException();
+            _kameraDal.Update(kamera);
         }
     }
 }

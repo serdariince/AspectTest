@@ -31,6 +31,11 @@ namespace ServiceAPI
             services.AddSingleton<ITesisDal, EfTesisDal>();
             services.AddSingleton<IKameraServices, KameraManager>();
             services.AddSingleton<IKameraDal, EfKameraDal>();
+            services.AddSingleton<IKayitProgramiServices, KayitProgramiManager>();
+            services.AddSingleton<IKayitProgramiDal, EfKayitProgramiDal>();
+
+            services.AddSingleton<IIpService,IpManager>();
+            services.AddSingleton<IIpDal, EfIpDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

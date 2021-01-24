@@ -14,16 +14,10 @@ namespace Businnes.Contrete
         {
             _tesisDal = tesisDal;
         }
-
-        public List<Tesis> GetAllList()
-        {
-            return _tesisDal.GetTesisler().ToList();
-        }
-
-        public Tesis Get(int id)
+        public List<Tesis> Get(int id)
 
         {
-            return _tesisDal.Get(x => x.Id == id);
+            return _tesisDal.GetTesisler(x => x.Id == id);
         }
 
         public void Add(Tesis tesis)
@@ -39,6 +33,11 @@ namespace Businnes.Contrete
         public void Delete(Tesis tesis)
         {
             _tesisDal.Delete(tesis);
+        }
+
+        public List<Tesis> GetAllList()
+        {
+            return _tesisDal.GetTesisler().ToList();
         }
     }
 }
