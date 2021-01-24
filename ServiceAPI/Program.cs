@@ -1,9 +1,9 @@
 using System;
+using DataAccess.Load;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ServiceAPI.Load;
 
 namespace ServiceAPI
 {

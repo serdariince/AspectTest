@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Core.Concrete;
+﻿using Core.Concrete;
 
 namespace Entities
 {

@@ -1,11 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Core.Concrete;
+﻿using Core.Concrete;
 
 namespace Entities
 {
     public class Kamera : IEntitiy
     {
-
         public int Id { get; set; }
         public string Marka { get; set; }
         public string Model { get; set; }

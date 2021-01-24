@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Entities.Tesis>
+@foreach (var tesis in Model)
+{
+    <div class="jumbotron">
+        <div class="jumbotron-fluid">
+            <h1>@tesis.Name </h1>
+        </div>
+        <div class="jumbotron-fluid">
+            <h4>Adres : @tesis.Adres </h4>
+
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>
+                    Kayıt Sistemi
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.KayitProgrami.Kanal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kameralar)
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => tesis.KayitProgrami.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => tesis.KayitProgrami.Kanal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => tesis.Kameralar.Count)
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-striped table-info">
+            <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Marka
+                </th>
+                <th>
+                    Model
+                </th>
+                <th>
+                    Seri No
+                </th>
+                <th>
+                    Ip Adress
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var kamera in tesis.Kameralar)
+            {
+                <tr>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => kamera.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => kamera.Marka)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => kamera.Model)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => kamera.SeriNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => kamera.Ip.IpName)
+                    </td>
+
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}

@@ -4,7 +4,7 @@ using DataAccess.Concrete.EntitiyRepository;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace ServiceAPI.Load
+namespace DataAccess.Load
 {
     public class SeedData
     {

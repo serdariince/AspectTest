@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Linq;
-using System.Threading.Tasks;
 using Businnes.Abstract;
 using Entities;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceAPI.Controllers
 {
@@ -14,7 +10,7 @@ namespace ServiceAPI.Controllers
     [ApiController]
     public class IpController : ControllerBase
     {
-        private IIpService _ipService;
+        private readonly IIpService _ipService;
 
         public IpController(IIpService ipService)
         {
@@ -42,11 +38,13 @@ namespace ServiceAPI.Controllers
             var sonuc = _ipService.Get(id);
             return sonuc;
         }
+
         [HttpDelete]
         public void Delete(Ip entity)
         {
             _ipService.Delete(entity);
         }
+
         [HttpPut]
         public void Update(Ip entity)
         {

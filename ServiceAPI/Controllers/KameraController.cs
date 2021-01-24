@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Businnes.Abstract;
 using Entities;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceAPI.Controllers
 {
@@ -13,7 +9,7 @@ namespace ServiceAPI.Controllers
     [ApiController]
     public class KameraController : ControllerBase
     {
-        private IKameraServices _kameraServices;
+        private readonly IKameraServices _kameraServices;
 
         public KameraController(IKameraServices kameraServices)
         {
@@ -23,23 +19,24 @@ namespace ServiceAPI.Controllers
         [HttpGet]
         public IEnumerable<Kamera> Index()
         {
-
             return _kameraServices.GetAllList().ToArray();
         }
+
         [HttpGet("/kamera/{id}")]
         public Kamera Detay(int id)
         {
-
             return _kameraServices.Get(id);
         }
+
         [HttpPost("ekle")]
         public Kamera Ekle(Kamera kamera)
         {
             var result = kamera;
-               _kameraServices.Add(kamera);
+            _kameraServices.Add(kamera);
 
-           return result;
+            return result;
         }
+
         [HttpDelete]
         public Kamera Delete(Kamera kamera)
         {
@@ -48,6 +45,7 @@ namespace ServiceAPI.Controllers
 
             return result;
         }
+
         [HttpPut]
         public Kamera Update(Kamera kamera)
         {

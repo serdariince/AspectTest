@@ -14,10 +14,16 @@ namespace Businnes.Contrete
         {
             _tesisDal = tesisDal;
         }
+
         public List<Tesis> Get(int id)
 
         {
             return _tesisDal.GetTesisler(x => x.Id == id);
+        }
+
+        public Tesis GetTesis(int id)
+        {
+            return _tesisDal.Get(x => x.Id == id);
         }
 
         public void Add(Tesis tesis)

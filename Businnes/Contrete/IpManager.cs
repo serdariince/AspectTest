@@ -1,27 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Businnes.Abstract;
 using DataAccess.Abstrast;
 using Entities;
 
 namespace Businnes.Contrete
 {
-   public class IpManager:IIpService
-   {
-       private IIpDal _ipDal;
+    public class IpManager : IIpService
+    {
+        private readonly IIpDal _ipDal;
 
-       public IpManager(IIpDal ipDal)
-       {
-           _ipDal = ipDal;
-       }
+        public IpManager(IIpDal ipDal)
+        {
+            _ipDal = ipDal;
+        }
 
-       public List<Ip> GetAllList()
-       {
-           return _ipDal.GetList().ToList();
-       }
+        public List<Ip> GetAllList()
+        {
+            return _ipDal.GetList().ToList();
+        }
 
         public List<Ip> Get(int id)
         {

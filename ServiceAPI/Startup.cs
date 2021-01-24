@@ -34,7 +34,7 @@ namespace ServiceAPI
             services.AddSingleton<IKayitProgramiServices, KayitProgramiManager>();
             services.AddSingleton<IKayitProgramiDal, EfKayitProgramiDal>();
 
-            services.AddSingleton<IIpService,IpManager>();
+            services.AddSingleton<IIpService, IpManager>();
             services.AddSingleton<IIpDal, EfIpDal>();
         }
 

@@ -9,7 +9,7 @@ namespace Businnes.Abstract
 
         List<Tesis> Get(int id);
 
-        /* Tesis GetKamera(int id);*/
+        Tesis GetTesis(int id);
         void Add(Tesis tesis);
         void Update(Tesis tesis);
         void Delete(Tesis tesis);
