@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Businnes.Abstract;
+using Core.Aspect.Autofac.Logging;
 using DataAccess.Abstrast;
 using Entities;
 
@@ -15,12 +16,15 @@ namespace Businnes.Contrete
             _tesisDal = tesisDal;
         }
 
+        [LogAspect]
         public List<Tesis> Get(int id)
 
         {
             return _tesisDal.GetTesisler(x => x.Id == id);
         }
 
+/*        [LogAspect(typeof(Serilogger))]
+*/
         public Tesis GetTesis(int id)
         {
             return _tesisDal.Get(x => x.Id == id);

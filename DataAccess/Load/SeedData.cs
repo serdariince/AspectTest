@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Aspect.Autofac.Logging;
 using DataAccess.Concrete.EntitiyRepository;
 using Entities;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ namespace DataAccess.Load
 {
     public class SeedData
     {
+        [LogAspect]
         public static void Initialize(IServiceProvider serviceProvider)
         {
             Console.WriteLine("Çekirdek kurulum dosyaları çalıştırılıyor...");

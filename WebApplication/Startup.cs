@@ -1,7 +1,3 @@
-using Businnes.Abstract;
-using Businnes.Contrete;
-using DataAccess.Abstrast;
-using DataAccess.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,15 +19,16 @@ namespace WebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton<ITesisServices, TesisManager>();
-            services.AddSingleton<ITesisDal, EfTesisDal>();
-            services.AddSingleton<IKameraServices, KameraManager>();
-            services.AddSingleton<IKameraDal, EfKameraDal>();
-            services.AddSingleton<IKayitProgramiServices, KayitProgramiManager>();
-            services.AddSingleton<IKayitProgramiDal, EfKayitProgramiDal>();
+            //services.AddSingleton<ITesisServices, TesisManager>();
+            //services.AddSingleton<ITesisDal, EfTesisDal>();
+            //services.AddSingleton<IKameraServices, KameraManager>();
+            //services.AddSingleton<IKameraDal, EfKameraDal>();
+            //services.AddSingleton<IKayitProgramiServices, KayitProgramiManager>();
+            //services.AddSingleton<IKayitProgramiDal, EfKayitProgramiDal>();
 
-            services.AddSingleton<IIpService, IpManager>();
-            services.AddSingleton<IIpDal, EfIpDal>();
+            //services.AddSingleton<IIpService, IpManager>();
+            //services.AddSingleton<IIpDal, EfIpDal>();
+            //services.AddScoped<ILogger, Serilogger>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

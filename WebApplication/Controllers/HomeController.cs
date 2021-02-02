@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Businnes.Abstract;
+using Core.Aspect.Autofac.Logging;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -19,18 +20,20 @@ namespace WebApplication.Controllers
             _tesisServices = tesisServices;
         }
 
+        [LogAspect]
         public IActionResult Index()
         {
             var result = _tesisServices.GetAllList();
             return View(result);
         }
 
-
+        [LogAspect]
         public IActionResult Ekle()
         {
             return View();
         }
 
+        [LogAspect]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Ekle(Tesis tesis)
@@ -100,6 +103,7 @@ namespace WebApplication.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [LogAspect]
         public IActionResult Details(int id)
         {
             var entity = _tesisServices.Get(id);
